@@ -1,0 +1,33 @@
+.yow-full-explanation-container {
+    display: inline-flex;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+}
+.yow-full-explanation-element {
+    width: 30%;
+}
+.yow-full-explanation-separator {
+    width: 8px;
+    height: 8px;
+    border-top: 3px solid #d4d4dd;
+    border-right: 3px solid #d4d4dd;
+    margin-top: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+    transform: rotate(45deg);
+}
+.woocommerce-checkout #payment ul.payment_methods li .yow-full-explanation-element-img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-height: unset;
+}
+.woocommerce-checkout #payment div.payment_box .yow-full-explanation-element-p {
+    text-align: center;
+}
+.yow-success-page .yow-success-page-button {
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
