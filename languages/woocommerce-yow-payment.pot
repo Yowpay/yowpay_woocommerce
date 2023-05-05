@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: YOW Payment - WooCommerce Yow Payment Gateway\n"
+"Project-Id-Version: YowPay Payment - WooCommerce Yow Payment Gateway\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-30 10:48+0000\n"
+"POT-Creation-Date: 2023-04-28 13:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,10 +13,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.3; wp-6.2\n"
+"X-Loco-Version: 2.6.4; wp-6.2\n"
 "X-Domain: woocommerce-yow-payment"
 
-#: woocommerce-yow.php:119
+#: woocommerce-yow.php:114
 msgid ""
 "<p>Welcome to the YowPay plugin ! In a few minutes, your customers will be "
 "able to pay with SEPA Instant Transfers !</p><p>To start accepting payments "
@@ -30,77 +30,77 @@ msgid ""
 "documentation.</p>"
 msgstr ""
 
-#: woocommerce-yow.php:189
+#: woocommerce-yow.php:184
 msgid "Account owner"
 msgstr ""
 
-#: woocommerce-yow.php:174
+#: woocommerce-yow.php:169
 msgid "App Secret Key"
 msgstr ""
 
-#: woocommerce-yow.php:168
+#: woocommerce-yow.php:163
 msgid "App Token"
 msgstr ""
 
-#: woocommerce-yow.php:191
+#: woocommerce-yow.php:186
 msgid "BIC/SWIFT"
 msgstr ""
 
-#: woocommerce-yow.php:290
+#: woocommerce-yow.php:281
 msgid "Connect to your banking app"
 msgstr ""
 
-#: woocommerce-yow.php:195
+#: woocommerce-yow.php:190
 msgid "CONNECTED"
 msgstr ""
 
-#: woocommerce-yow.php:751
+#: woocommerce-yow.php:719
 msgid "Continue Shopping"
 msgstr ""
 
-#: woocommerce-yow.php:145
+#: woocommerce-yow.php:140
 msgid "Description"
 msgstr ""
 
-#: woocommerce-yow.php:156
+#: woocommerce-yow.php:151
 msgid ""
 "Display full explanation of the YowPay process with icons in the payment "
 "description, during the checkout"
 msgstr ""
 
-#: woocommerce-yow.php:153
+#: woocommerce-yow.php:148
 msgid "Display full explanation?"
 msgstr ""
 
-#: woocommerce-yow.php:132 woocommerce-yow.php:152
+#: woocommerce-yow.php:127 woocommerce-yow.php:147
 msgid "Enable / Disable"
 msgstr ""
 
-#: woocommerce-yow.php:133
+#: woocommerce-yow.php:128
 msgid "Enable YowPay?"
 msgstr ""
 
-#: woocommerce-yow.php:177
+#: woocommerce-yow.php:172
 msgid ""
 "Enter the App Secret created in your YowPay account and related to this E-"
 "commerce website"
 msgstr ""
 
-#: woocommerce-yow.php:171
+#: woocommerce-yow.php:166
 msgid ""
 "Enter the App Token created in your YowPay account and related to this E-"
 "commerce website"
 msgstr ""
 
-#: woocommerce-yow.php:196
+#: woocommerce-yow.php:191
 msgid "EXPIRED"
 msgstr ""
 
-#: woocommerce-yow.php:128
+#: woocommerce-yow.php:123
 msgid "General Settings"
 msgstr ""
 
-#: woocommerce-yow.php:753
+#: woocommerce-yow.php:721
 msgid "Go to order list"
 msgstr ""
 
@@ -108,97 +108,101 @@ msgstr ""
 msgid "https://yowpay.com/"
 msgstr ""
 
-#: woocommerce-yow.php:200
+#: woocommerce-yow.php:195
 msgid "https://yowpay.com/account/banking"
 msgstr ""
 
-#: woocommerce-yow.php:190
+#: woocommerce-yow.php:185
 msgid "IBAN"
 msgstr ""
 
-#: woocommerce-yow.php:197
+#: woocommerce-yow.php:192
 msgid "LOST"
 msgstr ""
 
-#: woocommerce-yow.php:415
+#: woocommerce-yow.php:403
 msgid ""
 "No Bank data was provided, please, go to your yowpay account and add it."
 msgstr ""
 
-#: woocommerce-yow.php:194
+#: woocommerce-yow.php:189
 msgid "NOT CONNECTED"
 msgstr ""
 
-#: woocommerce-yow.php:185
+#: woocommerce-yow.php:180
 msgid "Open Banking Connexion"
 msgstr ""
 
-#: woocommerce-yow.php:198
+#: woocommerce-yow.php:193
 msgid "Open Banking Consent expire at "
 msgstr ""
 
-#: woocommerce-yow.php:192
+#: woocommerce-yow.php:187
 msgid "Open banking Status"
 msgstr ""
 
-#: woocommerce-yow.php:141
+#: woocommerce-yow.php:136
 msgid "Pay with SEPA Instant transfer - by YowPay"
 msgstr ""
 
-#: woocommerce-yow.php:147
+#: woocommerce-yow.php:142
 msgid "Pay with SEPA Instant transfer using your banking application."
 msgstr ""
 
-#: woocommerce-yow.php:164
+#: woocommerce-yow.php:73
+msgid "Peer to Peer SEPA Payments made easy"
+msgstr ""
+
+#: woocommerce-yow.php:159
 msgid "Production Settings"
 msgstr ""
 
-#: woocommerce-yow.php:201
+#: woocommerce-yow.php:196
 msgid "Renew the consent"
 msgstr ""
 
-#: woocommerce-yow.php:660
+#: woocommerce-yow.php:639
 msgid "Response from payment gateway is not processable."
 msgstr ""
 
-#: woocommerce-yow.php:291
+#: woocommerce-yow.php:282
 msgid "Scan the QR Code or enter the payment details manually"
 msgstr ""
 
-#: woocommerce-yow-payment.php:86
+#: woocommerce-yow-payment.php:87
 msgid "Settings"
 msgstr ""
 
-#: woocommerce-yow.php:199
+#: woocommerce-yow.php:194
 msgid ""
 "Take care to renew before the expiration date. YowPay use the open banking "
 "access to validate payments"
 msgstr ""
 
-#: woocommerce-yow.php:668
+#: woocommerce-yow.php:647
 msgid ""
 "There is issue for connection payment gateway. Sorry for the inconvenience."
 msgstr ""
 
-#: woocommerce-yow.php:148
+#: woocommerce-yow.php:143
 msgid "This controls the description which user sees during checkout."
 msgstr ""
 
-#: woocommerce-yow.php:142
+#: woocommerce-yow.php:137
 msgid "This controls the title which the user sees during checkout."
 msgstr ""
 
-#: woocommerce-yow.php:136
+#: woocommerce-yow.php:131
 msgid ""
 "This controls whether or not \"Pay with SEPA instant Transfer - by YowPay\" "
 "is enable in the payment mode list within Woocommerce"
 msgstr ""
 
-#: woocommerce-yow.php:139
+#: woocommerce-yow.php:134
 msgid "Title"
 msgstr ""
 
-#: woocommerce-yow.php:292
+#: woocommerce-yow.php:283
 msgid "Validate your transfer"
 msgstr ""
 
@@ -206,15 +210,15 @@ msgstr ""
 msgid "WooCommerce Yow custom payment gateway integration."
 msgstr ""
 
-#: woocommerce-yow.php:750
+#: woocommerce-yow.php:718
 msgid "Your order will be validated soon automatically!"
 msgstr ""
 
-#: woocommerce-yow.php:74
-msgid "YowPay - SEPA Instant Transfer"
+#: woocommerce-yow.php:72
+msgid "YowPay Instant SEPA"
 msgstr ""
 
-#: woocommerce-yow.php:76
+#: woocommerce-yow.php:74
 msgid "YowPay Payment"
 msgstr ""
 
@@ -222,10 +226,6 @@ msgstr ""
 msgid "YowPay Payment - WooCommerce Yow Payment Gateway"
 msgstr ""
 
-#: woocommerce-yow.php:75
-msgid "YowPay Payment Gateway Plug-in for WooCommerce"
-msgstr ""
-
-#: woocommerce-yow.php:748
+#: woocommerce-yow.php:716
 msgid "YowPay success Page"
 msgstr ""
