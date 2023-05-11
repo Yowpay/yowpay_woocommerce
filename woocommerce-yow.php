@@ -150,6 +150,12 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 				'default' => '1',
 				'description' => __('Display full explanation of the YowPay process with icons in the payment description, during the checkout', 'woocommerce-yow-payment'),
 			],
+			'delete_data_after_uninstall' => [
+				'title' => __('Delete all data while uninstalling plugin', 'woocommerce-yow-payment'),
+				'label' => __('Irreversible operation', 'woocommerce-yow-payment'),
+				'type' => 'checkbox',
+				'default' => 'no'
+			],
 			'space2' => [
 				'px' => 60,
 				'type' => 'space'
@@ -170,6 +176,7 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 				'type' => 'password',
 				'default' => '',
 				'description' => __('Enter the App Secret created in your YowPay account and related to this E-commerce website', 'woocommerce-yow-payment'),
+				'custom_attributes' => ['autocomplete' => 'new-password'],
 			],
 			'space3' => [
 				'px' => 60,
@@ -744,6 +751,18 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 		);
 
 		wp_insert_post($newPage);
+	}
+
+	/**
+	 * Success page will be deleted if it exists
+	 *
+	 * @return void
+	 */
+	public static function deleteSuccessPage() {
+		$page = get_page_by_path(self::SUCCESS_PAGE_SLUG);
+		if ($page) {
+			wp_delete_post($page->ID, true);
+		}
 	}
 
 	/**

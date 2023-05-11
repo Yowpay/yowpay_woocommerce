@@ -4,7 +4,7 @@
  * Plugin Name: YowPay Payment - WooCommerce Yow Payment Gateway
  * Plugin URI: https://yowpay.com/
  * Description: WooCommerce Yow custom payment gateway integration.
- * Version: 1.0.0
+ * Version: 1.0.3
  * Author: YowPay
  * Author URI: https://yowpay.com/
  * Text Domain: woocommerce-yow-payment

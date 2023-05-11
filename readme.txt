@@ -4,7 +4,7 @@ Tags: payment gateway, payment, yowpay
 Requires at least: 5.9
 Tested up to: 6.1
 Requires PHP: 7.0
-Stable tag: 1.0.0
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,5 +32,14 @@ Yow is a Software As A Service (SaaS) not a financial institution; therefore you
 
 == Changelog ==
 
-2023-05-04 - version 1.0.0
-* Initial release
+2023-05-11 - version 1.0.3
+* New config for defining weather or not to delete all plugin data when uninstalling it.
+
+2023-05-05 - version 1.0.2
+* Additional woocommerce plugin validator update.
+
+2023-04-27 - version 1.0.1
+* Woocommerce plugin validator update.
+
+2023-04-11 - version 1.0.0
+* YowPay Third Party Payment Gateway Plugin for Woocommerce version 1.0.0

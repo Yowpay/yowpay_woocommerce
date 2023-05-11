@@ -1,4 +1,13 @@
 *** YowPay Instant SEPA Changelog ***
 
-2023-05-04 - version 1.0.0
-* Initial release
+2023-05-11 - version 1.0.3
+* New config for defining weather or not to delete all plugin data when uninstalling it.
+
+2023-05-05 - version 1.0.2
+* Additional woocommerce plugin validator update.
+
+2023-04-27 - version 1.0.1
+* Woocommerce plugin validator update.
+
+2023-04-11 - version 1.0.0
+* YowPay Third Party Payment Gateway Plugin for Woocommerce version 1.0.0

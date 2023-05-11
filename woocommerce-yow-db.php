@@ -48,6 +48,16 @@ class Woocommerce_Yow_Db {
 	}
 
 	/**
+	 * Delete table for transactions
+	 *
+	 * @return void
+	 */
+	public function deleteTables() {
+		global $wpdb;
+		$wpdb->query( 'DROP TABLE IF EXISTS wp_yow_transactions');
+	}
+
+	/**
 	 * Return transaction by order id
 	 *
 	 * @param $orderId

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YowPay Payment - WooCommerce Yow Payment Gateway\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-28 13:09+0000\n"
+"POT-Creation-Date: 2023-05-08 15:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -30,32 +30,36 @@ msgid ""
 "documentation.</p>"
 msgstr ""
 
-#: woocommerce-yow.php:184
+#: woocommerce-yow.php:190
 msgid "Account owner"
 msgstr ""
 
-#: woocommerce-yow.php:169
+#: woocommerce-yow.php:175
 msgid "App Secret Key"
 msgstr ""
 
-#: woocommerce-yow.php:163
+#: woocommerce-yow.php:169
 msgid "App Token"
 msgstr ""
 
-#: woocommerce-yow.php:186
+#: woocommerce-yow.php:192
 msgid "BIC/SWIFT"
 msgstr ""
 
-#: woocommerce-yow.php:281
+#: woocommerce-yow.php:287
 msgid "Connect to your banking app"
 msgstr ""
 
-#: woocommerce-yow.php:190
+#: woocommerce-yow.php:196
 msgid "CONNECTED"
 msgstr ""
 
-#: woocommerce-yow.php:719
+#: woocommerce-yow.php:725
 msgid "Continue Shopping"
+msgstr ""
+
+#: woocommerce-yow.php:154
+msgid "Delete all data while uninstalling plugin"
 msgstr ""
 
 #: woocommerce-yow.php:140
@@ -80,19 +84,19 @@ msgstr ""
 msgid "Enable YowPay?"
 msgstr ""
 
-#: woocommerce-yow.php:172
+#: woocommerce-yow.php:178
 msgid ""
 "Enter the App Secret created in your YowPay account and related to this E-"
 "commerce website"
 msgstr ""
 
-#: woocommerce-yow.php:166
+#: woocommerce-yow.php:172
 msgid ""
 "Enter the App Token created in your YowPay account and related to this E-"
 "commerce website"
 msgstr ""
 
-#: woocommerce-yow.php:191
+#: woocommerce-yow.php:197
 msgid "EXPIRED"
 msgstr ""
 
@@ -100,44 +104,49 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: woocommerce-yow.php:721
+#: woocommerce-yow.php:727
 msgid "Go to order list"
 msgstr ""
 
 #. URI of the plugin
+#. Author URI of the plugin
 msgid "https://yowpay.com/"
 msgstr ""
 
-#: woocommerce-yow.php:195
+#: woocommerce-yow.php:201
 msgid "https://yowpay.com/account/banking"
 msgstr ""
 
-#: woocommerce-yow.php:185
+#: woocommerce-yow.php:191
 msgid "IBAN"
 msgstr ""
 
-#: woocommerce-yow.php:192
+#: woocommerce-yow.php:155
+msgid "Irreversible operation"
+msgstr ""
+
+#: woocommerce-yow.php:198
 msgid "LOST"
 msgstr ""
 
-#: woocommerce-yow.php:403
+#: woocommerce-yow.php:409
 msgid ""
 "No Bank data was provided, please, go to your yowpay account and add it."
 msgstr ""
 
-#: woocommerce-yow.php:189
+#: woocommerce-yow.php:195
 msgid "NOT CONNECTED"
 msgstr ""
 
-#: woocommerce-yow.php:180
+#: woocommerce-yow.php:186
 msgid "Open Banking Connexion"
 msgstr ""
 
-#: woocommerce-yow.php:193
+#: woocommerce-yow.php:199
 msgid "Open Banking Consent expire at "
 msgstr ""
 
-#: woocommerce-yow.php:187
+#: woocommerce-yow.php:193
 msgid "Open banking Status"
 msgstr ""
 
@@ -153,33 +162,33 @@ msgstr ""
 msgid "Peer to Peer SEPA Payments made easy"
 msgstr ""
 
-#: woocommerce-yow.php:159
+#: woocommerce-yow.php:165
 msgid "Production Settings"
 msgstr ""
 
-#: woocommerce-yow.php:196
+#: woocommerce-yow.php:202
 msgid "Renew the consent"
 msgstr ""
 
-#: woocommerce-yow.php:639
+#: woocommerce-yow.php:645
 msgid "Response from payment gateway is not processable."
 msgstr ""
 
-#: woocommerce-yow.php:282
+#: woocommerce-yow.php:288
 msgid "Scan the QR Code or enter the payment details manually"
 msgstr ""
 
-#: woocommerce-yow-payment.php:87
+#: woocommerce-gateway-yowpay-peer-to-peer-sepa-payments-made-easy.php:91
 msgid "Settings"
 msgstr ""
 
-#: woocommerce-yow.php:194
+#: woocommerce-yow.php:200
 msgid ""
 "Take care to renew before the expiration date. YowPay use the open banking "
 "access to validate payments"
 msgstr ""
 
-#: woocommerce-yow.php:647
+#: woocommerce-yow.php:653
 msgid ""
 "There is issue for connection payment gateway. Sorry for the inconvenience."
 msgstr ""
@@ -202,7 +211,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: woocommerce-yow.php:283
+#: woocommerce-yow.php:289
 msgid "Validate your transfer"
 msgstr ""
 
@@ -210,8 +219,12 @@ msgstr ""
 msgid "WooCommerce Yow custom payment gateway integration."
 msgstr ""
 
-#: woocommerce-yow.php:718
+#: woocommerce-yow.php:724
 msgid "Your order will be validated soon automatically!"
+msgstr ""
+
+#. Author of the plugin
+msgid "YowPay"
 msgstr ""
 
 #: woocommerce-yow.php:72
@@ -226,6 +239,6 @@ msgstr ""
 msgid "YowPay Payment - WooCommerce Yow Payment Gateway"
 msgstr ""
 
-#: woocommerce-yow.php:716
+#: woocommerce-yow.php:722
 msgid "YowPay success Page"
 msgstr ""
