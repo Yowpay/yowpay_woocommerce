@@ -1,5 +1,8 @@
 *** YowPay Instant SEPA Changelog ***
 
+2023-05-25 - version 1.0.4
+Redirect to plugin configs page after installation process is finished.
+
 2023-05-11 - version 1.0.3
 * New config for defining weather or not to delete all plugin data when uninstalling it.
 

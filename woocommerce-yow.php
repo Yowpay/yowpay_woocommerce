@@ -84,7 +84,6 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 
 		add_filter('woocommerce_available_payment_gateways', [$this, 'checkCurrency']);
 
-		add_action('admin_notices', [$this, 'doSslCheck']);
 		if (is_admin()) {
 			add_action('woocommerce_update_options_payment_gateways_' . $this->id, [$this, 'process_admin_options']);
 		}
@@ -920,23 +919,5 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 			return $this->$name;
 		}
 		return '';
-	}
-
-	/**
-	 * Check ssl
-	 *
-	 * @return void
-	 */
-	public function doSslCheck() {
-		if ('yes' === $this->enabled && 'no' === get_option('woocommerce_force_ssl_checkout')) {
-			echo esc_html('<div class="error"><p>' .
-				sprintf(
-					/* translators: 1: method title, 2: admin url for woocommerce settings */
-					__('<strong>%1$s</strong> is enabled and WooCommerce is not forcing the SSL certificate on your checkout page. Please ensure that you have a valid SSL certificate and that you are <a href="%2$s">forcing the checkout pages to be secured.</a>'),
-					$this->method_title,
-					admin_url('admin.php?page=wc-settings&tab=checkout')
-				) .
-				'</p></div>');
-		}
 	}
 }
