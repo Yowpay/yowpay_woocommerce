@@ -1,4 +1,4 @@
-# YowPay Third Party Payment Gateway Plugin for Woocommerce
+# YowPay Payment for WooCommerce
 
 ## Installation
 
@@ -7,7 +7,7 @@
 3. Click button `Add New`
 4. Click button `Upload Plugin`
 5. Upload zip file with plugin
-6. Find `YOW Payment - WooCommerce Yow Payment Gateway` and activate it
+6. Find `YowPay custom payment gateway integration.` and activate it
 
 ## Settings
 

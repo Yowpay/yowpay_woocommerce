@@ -1,10 +1,10 @@
 <?php
 
 /*
- * Plugin Name: YowPay Payment - WooCommerce Yow Payment Gateway
+ * Plugin Name: YowPay Payment for WooCommerce
  * Plugin URI: https://yowpay.com/
- * Description: WooCommerce Yow custom payment gateway integration.
- * Version: 1.0.4
+ * Description: YowPay custom payment gateway integration.
+ * Version: 1.0.6
  * Author: YowPay
  * Author URI: https://yowpay.com/
  * Text Domain: woocommerce-yow-payment
@@ -14,6 +14,7 @@
 */
 
 use Automattic\Jetpack\Constants;
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
 
 define('WC_YOW_ASSETS', plugin_dir_url(__FILE__) . 'assets/');
 
@@ -110,6 +111,15 @@ function woocommerceYowRedirect() {
         exit;
     }
 }
+
+add_action( 'before_woocommerce_init', 'woocommerceYowHPOS');
+
+function woocommerceYowHPOS() {
+    if ( class_exists( FeaturesUtil::class ) ) {
+        FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+    }
+}
+
 
 function addErrorLog( $msg ) {
 	$msg = gmdate('[Y-m-d H:i:s]') . ' WARNING: ' . $msg . PHP_EOL;

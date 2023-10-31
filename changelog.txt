@@ -1,5 +1,11 @@
 *** YowPay Instant SEPA Changelog ***
 
+2023-10-30 - version 1.0.6
+Add compatability with woocommerce HPOS
+
+2023-06-16 - version 1.0.5
+Update plugin name
+
 2023-05-25 - version 1.0.4
 Redirect to plugin configs page after installation process is finished.
 

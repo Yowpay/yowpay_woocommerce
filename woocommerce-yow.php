@@ -1,6 +1,6 @@
 <?php
 
-use Automattic\Jetpack\Constants;
+use Automattic\WooCommerce\Utilities\OrderUtil;
 
 /**
  * Yow Payment gateway class
@@ -590,7 +590,13 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 	 * {@inheritDoc}
 	 */
 	public function process_payment( $order_id ) {
-		$order = new WC_Order($order_id);
+        if ( OrderUtil::custom_orders_table_usage_is_enabled() ) {
+            $order = wc_get_order( $order_id );
+
+        } else {
+            $order = new WC_Order($order_id);
+        }
+
 		$url = self::TRANSACTION_BASE_URL . self::TRANSACTION_PATH_REQ;
 		$timestamp = time();
 		$payload = $this->createPayload($order, $timestamp);
@@ -684,9 +690,15 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 		}
 
 		if ($transactionsData['orderSum'] >= $transactionsData['totalPrice']) {
-			$order = new WC_Order($post['orderId']);
-			$order->payment_complete();
-		}
+            if ( OrderUtil::custom_orders_table_usage_is_enabled() ) {
+                $order = wc_get_order( $post['orderId'] );
+
+            } else {
+                $order = new WC_Order($post['orderId']);
+            }
+
+            $order->payment_complete();
+        }
 
 		$transactionData = [
 			'updated_at' => gmdate('Y-m-d H:i:s', $post['timestamp']),
@@ -773,21 +785,21 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 	private static function checkPostData( array $post ) {
 		$settings = get_option('woocommerce_woocommerce_yow_settings', null);
 		$sig = hash_hmac('sha256', json_encode($post), $settings['app_secret_key']);
-		if (
-			!(
-				isset($_SERVER['HTTP_X_APP_ACCESS_SIG']) &&
-				isset($_SERVER['HTTP_X_APP_ACCESS_TS']) &&
-				isset($post['timestamp']) &&
-				$_SERVER['HTTP_X_APP_ACCESS_TS'] == $post['timestamp'] &&
-				$_SERVER['HTTP_X_APP_ACCESS_SIG'] == $sig &&
-				$post['timestamp'] <= time() &&
-				$post['timestamp'] > ( time() - 15 )
-			)
-		) {
-			$msg = 'Webhook got invalid POST data: ' . json_encode($post) . 'or Headers: ' . json_encode($_SERVER);
-			addErrorLog($msg);
-			return false;
-		}
+
+        if (!isset($_SERVER['HTTP_X_APP_ACCESS_SIG']) || $_SERVER['HTTP_X_APP_ACCESS_SIG'] !== $sig ) {
+            addErrorLog('Webhook got Invalid header signature');
+            return false;
+        }
+
+        if (!isset($_SERVER['HTTP_X_APP_ACCESS_TS']) || !isset($post['timestamp']) || $_SERVER['HTTP_X_APP_ACCESS_TS'] != $post['timestamp']) {
+            addErrorLog('Missing timestamp in hook');
+            return false;
+        }
+
+        if (!(time() - $post['timestamp'] <= 15)) {
+            addErrorLog('Webhook got old timestamp');
+            return false;
+        }
 
 		$missedFields = [];
 		foreach (self::REQUIRED_WEBHOOK_FIELDS as $requiredWebhookParam) {
