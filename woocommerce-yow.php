@@ -3,18 +3,23 @@
 use Automattic\WooCommerce\Utilities\OrderUtil;
 
 /**
- * Yow Payment gateway class
+ * YowPay gateway class
  */
 class Woocommerce_Yow extends WC_Payment_Gateway {
 	/**
 	 * Payment api base url
 	 */
-	const TRANSACTION_BASE_URL = 'https://yowpay.com/';
+	const API_BASE_URL = 'https://api.yowpay.com/';
+
+	/**
+	 * Payment hosted page url
+	 */
+	const SECURE_BASE_URL = 'https://secure.yowpay.com/';
 
 	/**
 	 * Payment api path
 	 */
-	const TRANSACTION_PATH_REQ = 'api/createTransaction';
+	const TRANSACTION_PATH_REQ = 'transaction/create';
 
 	/**
 	 * Payment page path
@@ -24,12 +29,12 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 	/**
 	 * Update config path
 	 */
-	const TRANSACTION_PATH_CONF = 'api/updateConfig/';
+	const TRANSACTION_PATH_CONF = 'config/update';
 
 	/**
 	 * Bank data api path
 	 */
-	const BANK_DATA_PATH = 'api/getBankData';
+	const BANK_DATA_PATH = 'bankData/get';
 
 	/**
 	 * POST timeout parameter
@@ -498,7 +503,7 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 	 * @return array
 	 */
 	private function getBankData() {
-		$url = self::TRANSACTION_BASE_URL . self::BANK_DATA_PATH;
+		$url = self::API_BASE_URL . self::BANK_DATA_PATH;
 		$timestamp = time();
 
 		$payload = ['timestamp' => $timestamp];
@@ -547,7 +552,7 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 			return false;
 		}
 
-		$url = self::TRANSACTION_BASE_URL . self::TRANSACTION_PATH_CONF;
+		$url = self::API_BASE_URL . self::TRANSACTION_PATH_CONF;
 		$timestamp = time();
 		$payload = [
 			'returnUrl' => get_permalink(get_page_by_path(self::SUCCESS_PAGE_SLUG)),
@@ -597,7 +602,7 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
             $order = new WC_Order($order_id);
         }
 
-		$url = self::TRANSACTION_BASE_URL . self::TRANSACTION_PATH_REQ;
+		$url = self::API_BASE_URL . self::TRANSACTION_PATH_REQ;
 		$timestamp = time();
 		$payload = $this->createPayload($order, $timestamp);
 
@@ -626,7 +631,7 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 			$response['http_response'] instanceof WP_HTTP_Requests_Response
 		) {
 			$url = $response['http_response']->get_response_object()->url;
-			$needle = self::TRANSACTION_BASE_URL . self::TRANSACTION_PATH_RESP;
+			$needle = self::SECURE_BASE_URL . self::TRANSACTION_PATH_RESP;
 			if (!empty($url) && strpos($url, $needle) !== false) {
 				$transaction = explode('/', str_replace($needle, '', $url));
 
@@ -651,7 +656,7 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 					__('Response from payment gateway is not processable.', 'woocommerce-yow-payment'),
 					'error'
 				);
-				$msg = "Response from Yow Payment has invalid url: $url";
+				$msg = "Response from YowPay has invalid url: $url";
 				addErrorLog($msg);
 			}
 		} else {
@@ -659,14 +664,14 @@ class Woocommerce_Yow extends WC_Payment_Gateway {
 				__('There is issue for connection payment gateway. Sorry for the inconvenience.', 'woocommerce-yow-payment'),
 				'error'
 			);
-			$msg = 'Response from Yow Payment has invalid body: ' . json_encode($response);
+			$msg = 'Response from YowPay Payment has invalid body: ' . json_encode($response);
 			addErrorLog($msg);
 		}
 		return [];
 	}
 
 	/**
-	 * Function for webhook. Execute when Yow Payment send transaction confirmation
+	 * Function for webhook. Execute when YowPay send transaction confirmation
 	 *
 	 * @return string
 	 */
